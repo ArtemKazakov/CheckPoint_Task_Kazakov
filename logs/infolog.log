@@ -1,0 +1,18 @@
+01:46:22,795  INFO main root:getConnection:27 - get connection is success
+01:46:22,837  INFO main root:execute:31 - make report is success
+01:47:15,796  INFO main root:getConnection:27 - get connection is success
+01:47:15,860  INFO main root:execute:30 - add product is success
+01:47:56,078  INFO main root:getConnection:27 - get connection is success
+01:47:56,089  INFO main root:execute:33 - search all products is success
+01:47:58,577  INFO main root:getConnection:27 - get connection is success
+01:47:58,579  INFO main root:execute:31 - search by category is success
+01:48:00,776  INFO main root:getConnection:27 - get connection is success
+01:48:00,779  INFO main root:execute:31 - search by category is success
+01:48:14,196  INFO main root:getConnection:27 - get connection is success
+01:48:14,199  INFO main root:execute:31 - make report is success
+01:48:31,313  INFO main root:getConnection:27 - get connection is success
+01:48:31,316  INFO main root:execute:31 - make report is success
+01:48:43,855  INFO main root:getConnection:27 - get connection is success
+01:48:43,865  INFO main root:execute:31 - make report is success
+01:48:53,904  INFO main root:getConnection:27 - get connection is success
+01:48:53,913  INFO main root:execute:33 - search all products is success
