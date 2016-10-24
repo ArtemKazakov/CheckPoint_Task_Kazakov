@@ -4,7 +4,7 @@ import com.epam.bicyclerental.bean.entity.Category;
 import com.epam.bicyclerental.bean.entity.Product;
 import com.epam.bicyclerental.bean.entity.ReportNode;
 import com.epam.bicyclerental.constants.ExceptionConstant;
-import com.epam.bicyclerental.dao.BRDao;
+import com.epam.bicyclerental.dao.BicycleRentalDAO;
 import com.epam.bicyclerental.dao.factory.DAOFactory;
 import com.epam.bicyclerental.dao.exception.DAOException;
 import com.epam.bicyclerental.service.SearchBicycleRentalService;
@@ -19,7 +19,7 @@ public class SearchBicycleRental implements SearchBicycleRentalService{
     @Override
     public List<Product> searchAllProducts() throws ServiceException {
         DAOFactory factory = DAOFactory.getInstance();
-        BRDao dao = factory.getNBDao();
+        BicycleRentalDAO dao = factory.getProductDAO();
 
         try {
             return dao.findAllProducts();
@@ -35,7 +35,7 @@ public class SearchBicycleRental implements SearchBicycleRentalService{
         }
 
         DAOFactory factory = DAOFactory.getInstance();
-        BRDao dao = factory.getNBDao();
+        BicycleRentalDAO dao = factory.getProductDAO();
 
         Category Category = new Category();
         Category.setId(categoryId);
@@ -49,7 +49,7 @@ public class SearchBicycleRental implements SearchBicycleRentalService{
     @Override
     public List<ReportNode> makeReport() throws ServiceException {
         DAOFactory factory = DAOFactory.getInstance();
-        BRDao dao = factory.getNBDao();
+        BicycleRentalDAO dao = factory.getProductDAO();
 
         try {
             return dao.makeReport();

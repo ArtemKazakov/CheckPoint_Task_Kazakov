@@ -3,7 +3,7 @@ package com.epam.bicyclerental.service.impl;
 import com.epam.bicyclerental.bean.entity.Category;
 import com.epam.bicyclerental.bean.entity.Product;
 import com.epam.bicyclerental.constants.ExceptionConstant;
-import com.epam.bicyclerental.dao.BRDao;
+import com.epam.bicyclerental.dao.BicycleRentalDAO;
 import com.epam.bicyclerental.dao.factory.DAOFactory;
 import com.epam.bicyclerental.dao.exception.DAOException;
 import com.epam.bicyclerental.service.EditBicycleRentalService;
@@ -21,7 +21,7 @@ public class EditBicycleRental implements EditBicycleRentalService {
         }
 
         DAOFactory factory = DAOFactory.getInstance();
-        BRDao dao = factory.getNBDao();
+        BicycleRentalDAO dao = factory.getProductDAO();
 
         Product product = this.createProduct(name, price, description, categoryId);
         try {
@@ -41,7 +41,7 @@ public class EditBicycleRental implements EditBicycleRentalService {
         }
 
         DAOFactory factory = DAOFactory.getInstance();
-        BRDao dao = factory.getNBDao();
+        BicycleRentalDAO dao = factory.getProductDAO();
 
         Product product = this.createProduct(name, price, description, categoryId);
         product.setId(productId);
@@ -59,7 +59,7 @@ public class EditBicycleRental implements EditBicycleRentalService {
         }
 
         DAOFactory factory = DAOFactory.getInstance();
-        BRDao dao = factory.getNBDao();
+        BicycleRentalDAO dao = factory.getProductDAO();
 
         Product product = new Product();
         product.setId(productId);
