@@ -8,18 +8,20 @@ import com.epam.bicyclerental.constants.ExceptionConstant;
 import com.epam.bicyclerental.constants.SQLQueryConstant;
 import com.epam.bicyclerental.dao.BicycleRentalDAO;
 import com.epam.bicyclerental.dao.exception.DAOException;
+import com.sun.corba.se.pept.transport.*;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO implements BicycleRentalDAO {
 
 	public final static Logger LOGGER = Logger.getRootLogger();
-	private Connection connection = null;
 
 	public Connection getConnection() throws DAOException{
+		Connection connection = null;
 		try {
 			Class.forName(DBConstant.DB_DRIVER);
 			connection = DriverManager.getConnection(DBConstant.DB_URL, DBConstant.DB_LOGIN, DBConstant.DB_PASSWORD);
@@ -40,7 +42,7 @@ public class ProductDAO implements BicycleRentalDAO {
 	@Override
 	public void addProduct(Product product) throws DAOException {
 		PreparedStatement preparedStatement = null;
-		getConnection();
+		Connection connection = getConnection();
 		try{
 			preparedStatement = connection.prepareStatement(SQLQueryConstant.INSERT_QUERY);
 
@@ -54,7 +56,7 @@ public class ProductDAO implements BicycleRentalDAO {
 			throw new DAOException(ExceptionConstant.SQL_FAIL, e);
 		} finally {
 			closeStatement(preparedStatement);
-			closeConnection();
+			closeConnection(connection);
 		}
 	}
 
@@ -63,7 +65,7 @@ public class ProductDAO implements BicycleRentalDAO {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		List<Product> products = new ArrayList<>();
-		getConnection();
+		Connection connection = getConnection();
 		try{
 			preparedStatement = connection.prepareStatement(SQLQueryConstant.SELECT_BY_Category_QUERY);
 
@@ -81,14 +83,14 @@ public class ProductDAO implements BicycleRentalDAO {
 		} finally {
 			closeResultSet(resultSet);
 			closeStatement(preparedStatement);
-			closeConnection();
+			closeConnection(connection);
 		}
 	}
 
 	@Override
 	public void deleteProduct(Product product) throws DAOException {
 		PreparedStatement preparedStatement = null;
-		getConnection();
+		Connection connection = getConnection();
 		try{
 			preparedStatement = connection.prepareStatement(SQLQueryConstant.DELETE_QUERY);
 
@@ -99,14 +101,14 @@ public class ProductDAO implements BicycleRentalDAO {
 			throw new DAOException(ExceptionConstant.SQL_FAIL, e);
 		} finally {
 			closeStatement(preparedStatement);
-			closeConnection();
+			closeConnection(connection);
 		}
 	}
 
 	@Override
 	public void updateProduct(Product product) throws DAOException {
 		PreparedStatement preparedStatement = null;
-		getConnection();
+		Connection connection = getConnection();
 
 		try{
 			preparedStatement = connection.prepareStatement(SQLQueryConstant.UPDATE_QUERY);
@@ -122,7 +124,7 @@ public class ProductDAO implements BicycleRentalDAO {
 			throw new DAOException(ExceptionConstant.SQL_FAIL, e);
 		} finally {
 			closeStatement(preparedStatement);
-			closeConnection();
+			closeConnection(connection);
 		}
 	}
 
@@ -132,7 +134,7 @@ public class ProductDAO implements BicycleRentalDAO {
 		Statement statement = null;
 		ResultSet resultSet = null;
 		List<Product> products = new ArrayList<>();
-		getConnection();
+		Connection connection = getConnection();
 
 		try{
 			statement = connection.createStatement();
@@ -149,7 +151,7 @@ public class ProductDAO implements BicycleRentalDAO {
 		} finally {
 			closeResultSet(resultSet);
 			closeStatement(statement);
-			closeConnection();
+			closeConnection(connection);
 		}
 	}
 
@@ -158,7 +160,7 @@ public class ProductDAO implements BicycleRentalDAO {
 		Statement statement = null;
 		ResultSet resultSet = null;
 		List<ReportNode> reports = new ArrayList<>();
-		getConnection();
+		Connection connection = getConnection();
 
 		try{
 			statement = connection.createStatement();
@@ -180,12 +182,12 @@ public class ProductDAO implements BicycleRentalDAO {
 		} finally {
 			closeResultSet(resultSet);
 			closeStatement(statement);
-			closeConnection();
+			closeConnection(connection);
 		}
 	}
 
 
-	public void closeConnection() throws DAOException{
+	public void closeConnection(Connection connection) throws DAOException{
 		try {
 			if (connection != null) {
 				connection.close();
