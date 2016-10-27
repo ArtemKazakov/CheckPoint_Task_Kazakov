@@ -7,7 +7,6 @@ import com.epam.bicyclerental.constants.MessageConstant;
 import com.epam.bicyclerental.service.EditBicycleRentalService;
 import com.epam.bicyclerental.service.exception.ServiceException;
 import com.epam.bicyclerental.service.factory.ServiceFactory;
-import com.epam.bicyclerental.service.impl.EditBicycleRental;
 import org.apache.log4j.Logger;
 
 /**
@@ -20,7 +19,7 @@ public class AddProduct implements Command {
     public Response execute(Request request) {
 
         ServiceFactory factory = ServiceFactory.getInstance();
-        EditBicycleRentalService editService = factory.getEditNoteBookService();
+        EditBicycleRentalService editService = factory.getEditBicycleRentalService();
 
         Response response= new Response();
         try{

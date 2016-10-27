@@ -18,7 +18,7 @@ public class DeleteProduct implements Command{
     public Response execute(Request request) {
 
         ServiceFactory factory = ServiceFactory.getInstance();
-        EditBicycleRentalService editService = factory.getEditNoteBookService();
+        EditBicycleRentalService editService = factory.getEditBicycleRentalService();
 
         Response response= new Response();
         try{

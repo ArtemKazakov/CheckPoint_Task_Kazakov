@@ -15,7 +15,7 @@ public class SQLQueryConstant {
             "SET `id_Category` = ? , `name` = ? , `price` = ? , `description` =  ?" +
             "WHERE `id_product` = ? ";
 
-    public final static String SELECT_BY_Category_QUERY = "SELECT `products`.`id_product`, `products`.`name`, " +
+    public final static String SELECT_BY_CATEGORY_QUERY = "SELECT `products`.`id_product`, `products`.`name`, " +
             "`products`.`price`, `products`.`description`, `products`.`id_category`, `Categories`.`name`" +
             " FROM `products` " +
             "INNER JOIN `Categories` ON `products`.`id_category` = `Categories`.`id_category` " +

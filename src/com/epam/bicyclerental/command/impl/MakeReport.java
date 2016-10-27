@@ -20,7 +20,7 @@ public class MakeReport implements Command{
     @Override
     public Response execute(Request request) {
         ServiceFactory factory = ServiceFactory.getInstance();
-        SearchBicycleRentalService searchService = factory.getSearchNoteBookService();
+        SearchBicycleRentalService searchService = factory.getSearchBicycleRentalService();
 
         List<ReportNode> reportNodeList;
         Response response = new Response();

@@ -20,7 +20,7 @@ public class SearchProductsByCategory implements Command {
     @Override
     public Response execute(Request request) {
         ServiceFactory factory = ServiceFactory.getInstance();
-        SearchBicycleRentalService searchService = factory.getSearchNoteBookService();
+        SearchBicycleRentalService searchService = factory.getSearchBicycleRentalService();
 
         List<Product> products;
         Response response = new Response();

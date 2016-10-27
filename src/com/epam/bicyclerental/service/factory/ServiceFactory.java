@@ -18,11 +18,11 @@ public class ServiceFactory {
 		return instance;
 	}
 	
-	public EditBicycleRentalService getEditNoteBookService(){
+	public EditBicycleRentalService getEditBicycleRentalService(){
 		return editBicycleRentalService;
 	}
 	
-	public SearchBicycleRentalService getSearchNoteBookService(){
+	public SearchBicycleRentalService getSearchBicycleRentalService(){
 		return searchBicycleRentalService;
 	}
 

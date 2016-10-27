@@ -8,7 +8,6 @@ import com.epam.bicyclerental.constants.ExceptionConstant;
 import com.epam.bicyclerental.constants.SQLQueryConstant;
 import com.epam.bicyclerental.dao.BicycleRentalDAO;
 import com.epam.bicyclerental.dao.exception.DAOException;
-import com.sun.corba.se.pept.transport.*;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -67,7 +66,7 @@ public class ProductDAO implements BicycleRentalDAO {
 		List<Product> products = new ArrayList<>();
 		Connection connection = getConnection();
 		try{
-			preparedStatement = connection.prepareStatement(SQLQueryConstant.SELECT_BY_Category_QUERY);
+			preparedStatement = connection.prepareStatement(SQLQueryConstant.SELECT_BY_CATEGORY_QUERY);
 
 			preparedStatement.setInt(1, category.getId());
 

@@ -2,7 +2,6 @@ package com.epam.bicyclerental.command.impl;
 
 import com.epam.bicyclerental.bean.Request;
 import com.epam.bicyclerental.bean.Response;
-import com.epam.bicyclerental.bean.entity.Product;
 import com.epam.bicyclerental.command.Command;
 import com.epam.bicyclerental.constants.MessageConstant;
 import com.epam.bicyclerental.service.EditBicycleRentalService;
@@ -19,7 +18,7 @@ public class EditProduct implements Command {
     public Response execute(Request request) {
 
         ServiceFactory factory = ServiceFactory.getInstance();
-        EditBicycleRentalService editService = factory.getEditNoteBookService();
+        EditBicycleRentalService editService = factory.getEditBicycleRentalService();
 
         Response response= new Response();
         try{

@@ -8,7 +8,6 @@ import com.epam.bicyclerental.constants.MessageConstant;
 import com.epam.bicyclerental.service.SearchBicycleRentalService;
 import com.epam.bicyclerental.service.exception.ServiceException;
 import com.epam.bicyclerental.service.factory.ServiceFactory;
-import com.epam.bicyclerental.service.impl.SearchBicycleRental;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -22,7 +21,7 @@ public class SearchAllProducts implements Command {
     @Override
     public Response execute(Request request) {
         ServiceFactory factory = ServiceFactory.getInstance();
-        SearchBicycleRentalService searchService = factory.getSearchNoteBookService();
+        SearchBicycleRentalService searchService = factory.getSearchBicycleRentalService();
 
         List<Product> products;
         Response response = new Response();
