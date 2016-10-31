@@ -19,7 +19,7 @@ public class ProductDAO implements BicycleRentalDAO {
 
 	public final static Logger LOGGER = Logger.getRootLogger();
 
-	public Connection getConnection() throws DAOException{
+	public Connection getConnection() throws DAOException{// почему метод public?
 		Connection connection = null;
 		try {
 			Class.forName(DBConstant.DB_DRIVER);
@@ -186,7 +186,7 @@ public class ProductDAO implements BicycleRentalDAO {
 	}
 
 
-	public void closeConnection(Connection connection) throws DAOException{
+	public void closeConnection(Connection connection) throws DAOException{// public? где же ты его вызывать-то собираешься?
 		try {
 			if (connection != null) {
 				connection.close();

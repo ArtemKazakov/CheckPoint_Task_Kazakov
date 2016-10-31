@@ -3,7 +3,7 @@ package com.epam.bicyclerental.bean.entity;
 /**
  * Created by ASUS on 19.10.2016.
  */
-public class Product {
+public class Product {// equals, hashCode где?
 
     private int id;
     private Category Category;
