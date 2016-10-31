@@ -3,6 +3,8 @@ package com.epam.bicyclerental.constants;
 /**
  * Created by ASUS on 19.10.2016.
  */
+// бред какой-то
+// что это за класс
 public class ExceptionConstant {
     public static final String INVALID_INPUT_DATA = "Invalid data";
     public static final String DB_DRIVER_CLASS_ERROR = "Db driver class not found";
