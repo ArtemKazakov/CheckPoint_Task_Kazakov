@@ -17,7 +17,8 @@ public class EditBicycleRental implements EditBicycleRentalService {
     public void addProduct(String name, double price, String description, int categoryId) throws ServiceException {
         if(!Validator.validateId(categoryId) || !Validator.validatePrice(price)
                 || !Validator.validateString(name) || !Validator.validateString(description)){
-            throw new ServiceException(ExceptionConstant.INVALID_INPUT_DATA);
+            throw new ServiceException(ExceptionConstant.INVALID_INPUT_DATA);// а вот здесь можно использовать простую строку
+            // и когда вы уже научитесь слышать ВСЕ объяснения, а не избирательно
         }
 
         DAOFactory factory = DAOFactory.getInstance();
