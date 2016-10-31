@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by ASUS on 19.10.2016.
  */
-public class SearchAllProducts implements Command {
+public class SearchAllProducts implements Command {// ну не именуются классы множественным числом
     public final  static Logger LOGGER = Logger.getRootLogger();
 
     @Override
